@@ -16,7 +16,7 @@ if __name__ == "__main__":
     elif len (sys.argv) == 5 and int(sys.argv[4]) == 0:
         login = sys.argv[1]
         password = sys.argv[2]
-        dialog = int(sys.argv)+2000000000
+        dialog = int(sys.argv[3]) + 2000000000
         print("")
     else:
         print("недостаточно параметров")
@@ -34,7 +34,7 @@ if __name__ == "__main__":
         print(str(100*x*200//numOfMessages) + '%')
         sleep(0.34)
     print('100%')
-    f = open('messages.txt', 'w')
+    f = open('messages.' + str(dialog) + '.txt', 'w')
     for el in messages:
         if el != numOfMessages:
             neededEl = {"text" : el.get('body'), "id" : el.get('from_id')}
